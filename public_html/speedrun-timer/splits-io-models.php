@@ -9,7 +9,14 @@ enum GameTimingMethod:string {
 
 class Runner
 {
-
+  public string $id;
+  public null|string $twitch_id;
+  public null|string $twitch_name;
+  public string $display_name;
+  public string $name;
+  public string $avatar;
+  public string $created_at;
+  public string $updated_at;
 }
 
 class Category
