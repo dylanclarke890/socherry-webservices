@@ -14,7 +14,7 @@ trait Request
   {
     return self::$baseUrl . self::$endpoint;
   }
-  public function send()
+  public function send(): void
   {
     $ch = curl_init(self::getRequestUrl());
 
