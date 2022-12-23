@@ -26,7 +26,17 @@ class Category
 
 class Game
 {
-
+  public string $id;
+  public string $name;
+  public string $shortname;
+  public string $created_at;
+  public string $updated_at;
+  /**
+   * @var Category[]
+   */
+  public $categories;
+  public null|string $srdc_id;
+  public null|string $cover_url;
 }
 
 class Segment 
