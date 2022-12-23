@@ -89,6 +89,7 @@ class Run
   public GameTimingMethod $default_timing;
   public string $program;
   public int $attempts;
+  public bool $uses_autosplitter;
   public string $created_at;
   public string $updated_at;
   public null|string $parsed_at;
