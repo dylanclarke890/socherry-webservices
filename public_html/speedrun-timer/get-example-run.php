@@ -34,7 +34,7 @@ class RunRequest
     $response = curl_exec($ch);
     curl_close($ch);
 
-    echo json_encode($response);
+    echo "Received response: " . json_encode($response);
   }
 }
 
