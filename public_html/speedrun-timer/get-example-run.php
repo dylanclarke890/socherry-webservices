@@ -8,7 +8,7 @@ class RunRequest
   static private string $acceptHeader = "Accept: application/json";
   static private string $baseUrl = "https://splits.io/api/v4/runs/";
 
-  function __construct(string $runId, int $historic = 0)
+  function __construct(string $runId, bool $historic = false)
   {
     $this->runId = $runId;
     $this->historic = $historic;
@@ -18,8 +18,8 @@ class RunRequest
   function constructRequestUrl()
   {
     $url = self::$baseUrl . $this->runId;
-    if ($this->historic > 0)
-      $url = $url . "?historic={$this->historic}";
+    if ($this->historic)
+      $url = $url . "?historic=1";
     $this->url = $url;
   }
 
