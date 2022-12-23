@@ -9,10 +9,11 @@ enum GameTimingMethod:string {
 
 trait Request
 {
-  final private static string $baseUrl = "https://splits.io/api/v4";
+  final private static string $baseUrl = "https://splits.io/api/v4/";
+  private string $requestId;
   public static function getRequestUrl(): string
   {
-    return self::$baseUrl . self::$endpoint;
+    return self::$baseUrl . self::$endpoint . self::$requestId;
   }
   public function send(): void
   {
