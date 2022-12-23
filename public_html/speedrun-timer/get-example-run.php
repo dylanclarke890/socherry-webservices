@@ -38,4 +38,6 @@ class RunRequest
   }
 }
 
+$request = new RunRequest("9okq");
+$request->send();
 ?>
