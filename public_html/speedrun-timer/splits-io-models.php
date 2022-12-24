@@ -7,33 +7,8 @@ enum GameTimingMethod:string {
   case Game = "Game";
 }
 
-trait Request
-{
-  final private static string $baseUrl = "https://splits.io/api/v4/";
-  private string $requestId;
-  public static function getRequestUrl(): string
-  {
-    return self::$baseUrl . self::$endpoint . self::$requestId;
-  }
-  public function send(): void
-  {
-    $ch = curl_init(self::getRequestUrl());
-
-    curl_setopt($ch, CURLOPT_HTTPGET, 1);
-    curl_setopt($ch, CURLOPT_HTTPHEADER, ("Accept: application/json"));
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-
-    $response = curl_exec($ch);
-    curl_close($ch);
-
-    echo $response;
-  }
-}
-
 class Runner
 {
-  use Request;
-  private static string $endpoint = "runners/";
   public string $id;
   public null|string $twitch_id;
   public null|string $twitch_name;
@@ -46,8 +21,6 @@ class Runner
 
 class Category
 {
-  use Request;
-  private static string $endpoint = "categories/";
   public string $id;
   public string $name;
   public string $created_at;
@@ -56,8 +29,6 @@ class Category
 
 class Game
 {
-  use Request;
-  private static string $endpoint = "games/";
   public string $id;
   public string $name;
   public string $shortname;
@@ -71,10 +42,8 @@ class Game
   public null|string $cover_url;
 }
 
-class Segment 
+class Segment
 {
-  use Request;
-  private static string $endpoint = "segments/";
   public string $id;
   public string $name;
   public string $display_name;
@@ -99,8 +68,6 @@ class Segment
 
 class History
 {
-  use Request;
-  private static string $endpoint = "runners/";
   public int $attempt_number;
   public int $realtime_duration_ms;
   public int $gametime_duration_ms;
@@ -110,8 +77,6 @@ class History
 
 class Run
 {
-  use Request;
-  private static string $endpoint = "runs/";
   public string $id;
   public null|string $srdc_id;
 
