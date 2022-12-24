@@ -1,8 +1,6 @@
 <?php
 header("Access-Control-Allow-Origin: *");
 
-declare(strict_types=1);
-
 enum RequestType:int
 {
   case RUN = 0;
