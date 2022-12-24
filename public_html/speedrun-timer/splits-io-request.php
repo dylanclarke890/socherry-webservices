@@ -60,7 +60,7 @@ class Request
     $ch = curl_init($this->getRequestUrl());
 
     curl_setopt($ch, CURLOPT_HTTPGET, 1);
-    curl_setopt($ch, CURLOPT_HTTPHEADER, ("Accept: application/json"));
+    curl_setopt($ch, CURLOPT_HTTPHEADER, array("Accept: application/json"));
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
     $response = curl_exec($ch);
