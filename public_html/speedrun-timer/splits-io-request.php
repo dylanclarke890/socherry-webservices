@@ -1,6 +1,4 @@
 <?php declare(strict_types=1);
-namespace SplitsIO;
-
 header('Access-Control-Allow-Origin: *');
 
 enum RequestType:int
