@@ -1,13 +1,15 @@
 <?php
 header("Access-Control-Allow-Origin: *");
 
+declare(strict_types=1);
+
 enum RequestType
 {
-  case RUN = 0;
-  case RUNNER = 1;
-  case GAME = 2;
-  case SEGMENT = 3;
-  case CATEGORY = 4;
+  case RUN;
+  case RUNNER;
+  case GAME;
+  case SEGMENT;
+  case CATEGORY;
 }
 
 class Request
