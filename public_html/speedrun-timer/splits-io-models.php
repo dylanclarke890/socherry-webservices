@@ -3,8 +3,8 @@
 namespace SplitsIO;
 
 enum GameTimingMethod:string {
-  case Real = "Real";
-  case Game = "Game";
+  case REAL = "Real";
+  case GAME = "Game";
 }
 
 class Runner
